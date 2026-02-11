@@ -1,0 +1,116 @@
+---
+import { Image } from 'astro:assets';
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+import TOC6 from "../assets/TOC6.png";
+import TOC5 from "../assets/TOC5.png";
+import TOC4 from "../assets/TOC4.png";
+import TOC3 from "../assets/TOC3.png";
+import TOC2 from "../assets/TOC2.png";
+
+const projects = [
+     {
+          title: "Symmetry-Driven Multiferroic Altermagnetism in Two-Dimensional Materials",
+          journal: "<i>J. Am. Chem. Soc.</i>&nbsp;<b>2026</b>, Published Online",
+          doi: "https://doi.org/10.1021/jacs.5c16402",
+          image: TOC6
+     },
+     {
+          title: "Engineering Altermagnetic States in Two-Dimensional Square Tessellations",
+          journal: "<i>Phys. Rev. Lett.</i>&nbsp;<b>2025</b>, 135, 036701",
+          doi: "https://doi.org/10.1103/v38b-5by1",
+          image: TOC5
+     },
+     {
+          title: "Bilayer Metal-Organic Framework Altermagnets with Electrically Tunable Spin-Split Valleys",
+          journal: "<i>J. Am. Chem. Soc.</i>&nbsp;<b>2025</b>, 147, 14806-14814",
+          doi: "https://doi.org/10.1021/jacs.5c04106",
+          image: TOC4
+     },
+     {
+          title: "Inverse Design of 2D Altermagnetic Metal-Organic Framework Monolayers from Hückel Theory of Nonbonding Molecular Orbitals",
+          journal: "<i>JACS Au</i>&nbsp;<b>2025</b>, 5, 381-387 • ACS Editors’ Choice",
+          doi: "https://doi.org/10.1021/jacsau.4c01150",
+          image: TOC3
+     },
+     {
+          title: "Realizing Altermagneism in Two-Dimensional Metal-Organic Framework Semiconductors with Electric-Field-Controlled Anisotropic Spin Current",
+          journal: "<i>Chem. Sci.</i>&nbsp;<b>2024</b>, 15, 13853-13863",
+          doi: "https://doi.org/10.1039/d4sc04125a",
+          image: TOC2
+     }
+     ];
+---
+
+<InfoLayout>
+     <div class="p-4 sm:pt-8 sm:px-12 pb-8 mt-0.5 flex flex-col">
+          <div class="space-y-4 sm:space-y-12 pb-20">
+          <H1> Research </H1>
+     </div>
+     </div>
+     <div class="px-4 sm:pt-8 sm:px-12 pb-2 flex flex-col">
+     <div class="text-3xl sm:text-4xl md:text-5xl text-zinc-100 font-bold leading-[1.25]">
+     Theoretical Design for Low-Dimensional Altermagnets on Reticular Materials
+     </div>
+     <div class="md:text-xl sm:col-span-2 text-zinc-400 mt-6">
+        <i>Theoretical design principles for altermagnets on reticular material platforms are 
+          developed from complementary mathematical, chemical, and functional perspectives. 
+          Symmetry analysis provides a mathematical foundation for understanding and controlling
+           the coupling between crystal structure and spin degrees of freedom. Chemical design 
+           through orbital engineering and coordination tuning enables targeted realization of 
+           altermagnetic states in reticular lattices. From a functional standpoint, this 
+           framework supports the integration of multiple spin-related properties within a 
+           single material platform, offering general design guidelines for altermagnetic 
+           materials with tunable and application-oriented spin functionalities.</i> 
+     </div>
+     </div>
+     <div class="p-4 sm:p-12 lg:pr-11 sm:pb-8 pb-8 lg:pb-20">
+      <div class="text-2xl sm:text-3xl text-zinc-100 font-bold mb-4 sm:mb-6">
+     Research Highlights
+     </div>
+          <ul class="space-y-12">
+               {projects.map((project) => (
+                    <li class="flex flex-col lg:flex-row lg:gap-2 items-start mb-0 lg:mb-8">
+                         {/* 图片容器 */}
+                         <div class="w-full lg:w-35/100">
+                              <Image 
+                                   src={project.image} 
+                                   alt={project.title} 
+                                   class="aspect-[8.25/4.45] object-center object-cover rounded-lg shadow-lg w-full h-auto"
+                              />
+                         </div>
+                         
+                         {/* 文字容器 */}
+                         <div class="w-full lg:w-65/100">
+                              <div class="lg:pl-4">
+                                   <h1 class="text-xl sm:text-2xl font-semibold text-zinc-100 mb-2 lg:mb-3 mt-3 lg:mt-0">{project.title}</h1>
+                                   {/* 期刊信息和DOI按钮容器 */}
+                                   <div class="flex items-center gap-3 mb-8">
+                                        {/* 期刊信息 */}
+                                        <span 
+                                             class="inline-flex items-center text-sm sm:text-base text-zinc-100 bg-zinc-100/20 px-4 h-8 sm:h-10 rounded-full"
+                                             set:html={project.journal}
+                                        />
+                                        {/* DOI圆形图标按钮 */}
+                                        <a 
+                                             href={project.doi} 
+                                             target="_blank"
+                                             rel="noopener noreferrer"
+                                             title="View Article"
+                                             class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-700 hover:bg-red-200/60 flex items-center justify-center text-base sm:text-lg font-semibold text-zinc-100 hover:text-white shrink-0 transition-all duration-300 group relative"
+                                        >
+                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                                                  <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+                                             </svg>
+                                        </a>
+                                   </div>
+                              </div>
+                         </div>
+                    </li>
+               ))}
+          </ul>
+     <div class="text-2xl sm:text-3xl text-zinc-100 font-bold mb-4 sm:mb-6 pt-4">
+     Conference Presentations
+     </div>
+     </div>
+</InfoLayout>
