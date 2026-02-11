@@ -11,7 +11,7 @@ const defaultDescription = "Ph.D. Candidate, USTC";
 // 检查是否是不能滚动的页面
 const pathname = Astro.url.pathname;
 const noScrollPages = ['/', '/contact'];
-const isNoScrollPage = noScrollPages.includes(pathname);
+const isNoScrollPage = true; // 默认锁定所有页面
 ---
 
 <!doctype html>
