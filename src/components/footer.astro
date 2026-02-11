@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import ExternalLink from "./external-link.astro";
 
-const pathname = Astro.url.pathname;
+const { pathname } = Astro.props;
 ---
 
 <footer
@@ -20,7 +20,7 @@ const pathname = Astro.url.pathname;
   <!-- 左侧：导航 -->
   <div class="hidden lg:flex items-center gap-8 sm:px-6 md:px-10">
     <div class="flex gap-1">
-      <ExternalLink href="/" openNewTab={false}>
+      <ExternalLink href="/" openNewTab={false} pathname={pathname}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -36,18 +36,25 @@ const pathname = Astro.url.pathname;
           />
         </svg>
       </ExternalLink>
+      <ExternalLink href="/bio" openNewTab={false} pathname={pathname}>
+        <span>Bio</span>
+      </ExternalLink>
+      <ExternalLink href="/research" openNewTab={false} pathname={pathname}>
+        <span>Research</span>
+      </ExternalLink>
+      <ExternalLink href="/publications" openNewTab={false} pathname={pathname}>
+        <span>Publications</span>
+      </ExternalLink>
+      <ExternalLink href="/contact" openNewTab={false} pathname={pathname}>
+        <span>Contact</span>
+      </ExternalLink>
     </div>
-
-    <ExternalLink href="/bio" openNewTab={false} class:list={{ 'text-white': pathname === '/bio' }}>Bio</ExternalLink>
-    <ExternalLink href="/research" openNewTab={false} class:list={{ 'text-white': pathname === '/research' }}>Research</ExternalLink>
-    <ExternalLink href="/publications" openNewTab={false} class:list={{ 'text-white': pathname === '/publications' }}>Publications</ExternalLink>
-    <ExternalLink href="/contact" openNewTab={false} class:list={{ 'text-white': pathname === '/contact' }}>Contact</ExternalLink>
   </div>
 
   <!-- 移动端：导航 + Copyright -->
   <div class="lg:hidden flex flex-col items-center gap-4 w-full">
     <div class="flex items-center gap-4 mt-1">
-      <ExternalLink href="/" openNewTab={false}>
+      <ExternalLink href="/" openNewTab={false} pathname={pathname}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -63,10 +70,18 @@ const pathname = Astro.url.pathname;
           />
         </svg>
       </ExternalLink>
-      <ExternalLink href="/bio" openNewTab={false}>Bio</ExternalLink>
-      <ExternalLink href="/research" openNewTab={false}>Research</ExternalLink>
-      <ExternalLink href="/publications" openNewTab={false}>Publications</ExternalLink>
-      <ExternalLink href="/contact" openNewTab={false}>Contact</ExternalLink>
+      <ExternalLink href="/bio" openNewTab={false} pathname={pathname}>
+        <span>Bio</span>
+      </ExternalLink>
+      <ExternalLink href="/research" openNewTab={false} pathname={pathname}>
+        <span>Research</span>
+      </ExternalLink>
+      <ExternalLink href="/publications" openNewTab={false} pathname={pathname}>
+        <span>Publications</span>
+      </ExternalLink>
+      <ExternalLink href="/contact" openNewTab={false} pathname={pathname}>
+        <span>Contact</span>
+      </ExternalLink>
     </div>
     <div class="text-zinc-500 text-center text-[13px] -mt-1">
       © {new Date().getFullYear()} Yixuan Che. All rights reserved.
