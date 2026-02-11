@@ -38,10 +38,10 @@ const pathname = Astro.url.pathname;
       </ExternalLink>
     </div>
 
-    <ExternalLink href="/bio" openNewTab={false} class={pathname === '/bio' ? 'text-white' : ''}>Bio</ExternalLink>
-    <ExternalLink href="/research" openNewTab={false} class={pathname === '/research' ? 'text-white' : ''}>Research</ExternalLink>
-    <ExternalLink href="/publications" openNewTab={false} class={pathname === '/publications' ? 'text-white' : ''}>Publications</ExternalLink>
-    <ExternalLink href="/contact" openNewTab={false} class={pathname === '/contact' ? 'text-white' : ''}>Contact</ExternalLink>
+    <ExternalLink href="/bio" openNewTab={false} class:list={{ 'text-white': pathname === '/bio' }}>Bio</ExternalLink>
+    <ExternalLink href="/research" openNewTab={false} class:list={{ 'text-white': pathname === '/research' }}>Research</ExternalLink>
+    <ExternalLink href="/publications" openNewTab={false} class:list={{ 'text-white': pathname === '/publications' }}>Publications</ExternalLink>
+    <ExternalLink href="/contact" openNewTab={false} class:list={{ 'text-white': pathname === '/contact' }}>Contact</ExternalLink>
   </div>
 
   <!-- 移动端：导航 + Copyright -->
