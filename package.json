@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.5",
-    "@tailwindcss/vite": "^4.1.4",
     "@paper-design/shaders-react": "^0.0.29",
+    "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "astro": "^5.7.5",
@@ -24,6 +24,7 @@
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16"
+    "@tailwindcss/typography": "^0.5.16",
+    "puppeteer": "^24.37.2"
   }
 }
