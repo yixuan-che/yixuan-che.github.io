@@ -106,7 +106,7 @@ const googleScholarData = {
 };
 ---
 
-<InfoLayout contentPaddingBottom="4.5rem" contentPaddingBottomMobile="6.5rem">
+<InfoLayout contentPaddingBottom="4.5rem">
   <div class="p-4 sm:pt-8 sm:px-12 mt-0.5">
     <H1>Publications</H1>
     
@@ -239,3 +239,12 @@ const googleScholarData = {
     })}
   </div>
 </InfoLayout>
+
+<style>
+  @media (max-width: 430px) {
+    /* publications 页面在小屏时比默认底部再多 10px */
+    .info-content.page-publications {
+      padding-bottom: calc(var(--page-content-padding, 4.5rem) + 10px) !important;
+    }
+  }
+</style>
