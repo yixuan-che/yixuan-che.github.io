@@ -4,14 +4,13 @@ import InfoLayout from "../layouts/InfoLayout.astro";
 ---
 
 <InfoLayout>
-     <div class="vh-scroll-wrapper" style="height:calc(var(--vh,1vh)*100); overflow:auto; -webkit-overflow-scrolling:touch;">
-          <div class="p-4 sm:pt-8 sm:px-12 pb-8 mt-0.5 flex flex-col">
-               <div class="space-y-4 sm:space-y-12 pb-30">
-                    <H1> Bio </H1>
-               </div>
-          </div>
+<div class="p-4 sm:pt-8 sm:px-12 pb-8 mt-0.5 flex flex-col justify-between">
+<div class="space-y-4 sm:space-y-12 pb-30">
+     <H1> Bio </H1>
+</div>
+</div>
 
-          <div class="p-4 pt-0 sm:pt-10 sm:px-12 pb-4 flex flex-col">
+<div class="p-4 pt-0 sm:pt-10 sm:px-12 pb-4 flex flex-col">
 <div class="text-3xl md:text-4xl text-zinc-100 font-bold pb-4">
      Education
 </div>
@@ -296,16 +295,5 @@ import InfoLayout from "../layouts/InfoLayout.astro";
      2022
      </div>
 </div>
-          </div>
-     </div>
-
-     <script>
-          (() => {
-               if (typeof window === 'undefined' || typeof document === 'undefined') return;
-               const setVh = () => document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-               setVh();
-               window.addEventListener('resize', setVh);
-               window.addEventListener('orientationchange', setVh);
-          })();
-     </script>
+</div>
 </InfoLayout>

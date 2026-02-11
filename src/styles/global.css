@@ -6,6 +6,17 @@
                BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Footer height variable (used to keep page content above the fixed footer) */
+:root {
+    --footer-height: 6.5rem;
+}
+
+/* Ensure contact pages leave space for the fixed footer (and safe-area for mobile) */
+.contact-page {
+    padding-bottom: calc(var(--footer-height) + env(safe-area-inset-bottom));
+    box-sizing: border-box;
+}
+
 /* 针对小屏幕设备的样式调整 */
 @media (max-width: 768px) {
     .contact-page {

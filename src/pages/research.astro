@@ -43,13 +43,11 @@ const projects = [
 ---
 
 <InfoLayout>
-     <div class="vh-scroll-wrapper" style="height:calc(var(--vh,1vh)*100); overflow:auto; -webkit-overflow-scrolling:touch;">
-          <div class="p-4 sm:pt-8 sm:px-12 pb-8 mt-0.5 flex flex-col">
-               <div class="space-y-4 sm:space-y-12 pb-30">
-                    <H1> Research </H1>
-               </div>
-          </div>
-          </div>
+     <div class="p-4 sm:pt-8 sm:px-12 pb-8 mt-0.5 flex flex-col">
+          <div class="space-y-4 sm:space-y-12 pb-30">
+          <H1> Research </H1>
+     </div>
+     </div>
      <div class="px-4 sm:pt-8 sm:px-12 pb-2 flex flex-col">
      <div class="text-3xl sm:text-4xl md:text-5xl text-zinc-100 font-bold leading-[1.25]">
      Theoretical Design for Low-Dimensional Altermagnets on Reticular Materials
@@ -239,15 +237,4 @@ const projects = [
      </div>
 </div>
 
-          </div>
-
-     <script>
-          (() => {
-               if (typeof window === 'undefined' || typeof document === 'undefined') return;
-               const setVh = () => document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-               setVh();
-               window.addEventListener('resize', setVh);
-               window.addEventListener('orientationchange', setVh);
-          })();
-     </script>
 </InfoLayout>

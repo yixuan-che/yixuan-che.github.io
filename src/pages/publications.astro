@@ -107,8 +107,7 @@ const googleScholarData = {
 ---
 
 <InfoLayout contentPaddingBottom="4.5rem">
-  <div class="vh-scroll-wrapper" style="height:calc(var(--vh,1vh)*100); overflow:auto; -webkit-overflow-scrolling:touch;">
-    <div class="p-4 sm:pt-8 sm:px-12 mt-0.5">
+  <div class="p-4 sm:pt-8 sm:px-12 mt-0.5">
     <H1>Publications</H1>
     
     <!-- Google Scholar静态统计卡片 -->
@@ -164,9 +163,9 @@ const googleScholarData = {
         </div>
       </div>
     </div>
-    </div>
+  </div>
 
-    <div class="p-4 sm:px-12 mb-4 md:-pb-10">
+  <div class="p-4 sm:px-12 mb-4 md:-pb-10">
     <!-- 年份索引 -->
     <div class="mb-1 sticky top-0 bg-zinc-900 backdrop-blur-sm py-4 z-10">
       <div class="flex gap-3 justify-center">
@@ -239,15 +238,4 @@ const googleScholarData = {
       );
     })}
   </div>
-    </div>
-
-  <script>
-    (() => {
-      if (typeof window === 'undefined' || typeof document === 'undefined') return;
-      const setVh = () => document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-      setVh();
-      window.addEventListener('resize', setVh);
-      window.addEventListener('orientationchange', setVh);
-    })();
-  </script>
 </InfoLayout>
