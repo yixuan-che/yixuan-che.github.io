@@ -6,7 +6,6 @@ import WarpBackground from "../components/warp-background";
 const { title, description, lockScroll = false, contentPaddingBottom = '7rem', contentPaddingBottomMobile = null } = Astro.props;
 
 const pathname = Astro.url.pathname;
-// generate a safe class name for page-specific styling
 const pageClass = `page-${pathname.replace(/[^a-zA-Z0-9_-]/g, '').replace(/^\//, '') || 'root'}`;
 ---
 
