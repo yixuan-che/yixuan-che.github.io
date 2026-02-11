@@ -17,26 +17,6 @@
     box-sizing: border-box;
 }
 
-/* 针对小屏幕设备的样式调整 */
-@media (max-width: 180px) {
-    .contact-page {
-        padding: 1rem;
-        min-height: 100dvh;
-        font-size: 0.875rem; /* 调整字体大小 */
-    }
-
-    .contact-page .contact-title {
-        padding-bottom: 2rem; /* 减少标题下方的间距 */
-    }
-
-    .contact-page .contact-info {
-        margin-top: 1rem; /* 减少顶部间距 */
-    }
-
-    .contact-page .contact-address {
-        margin-top: auto; /* 确保地址信息始终在底部 */
-    }
-}
 
 /* 保持页面在小屏时无横向滚动 */
 html, body {
