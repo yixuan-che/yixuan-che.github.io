@@ -27,9 +27,8 @@
     }
 }
 
-/* 保持页面背景与 footer 颜色一致，避免移动端滑动露白 */
+/* 保持页面在小屏时无横向滚动 */
 html, body {
-    background-color: #0b0b0d;
     overflow-x: hidden;
 }
 
