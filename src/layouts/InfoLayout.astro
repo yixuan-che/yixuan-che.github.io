@@ -31,7 +31,7 @@ const pageClass = `page-${pathname.replace(/[^a-zA-Z0-9_-]/g, '').replace(/^\//,
       </nav>
 
       <main class="relative flex-1">
-        <div class={`mx-auto w-full max-w-8xl info-content ${pageClass}`} style={`padding-bottom: ${contentPaddingBottom}`}>
+        <div class={`mx-auto w-full max-w-8xl info-content ${pageClass}`} style={`padding-bottom: var(--page-content-padding, ${contentPaddingBottom})`}>
           <slot />
         </div>
       </main>
@@ -46,6 +46,6 @@ const pageClass = `page-${pathname.replace(/[^a-zA-Z0-9_-]/g, '').replace(/^\//,
 
 {contentPaddingBottomMobile ? (
   <style>
-    {`@media (max-width: 430px) { .info-content.${pageClass} { padding-bottom: ${contentPaddingBottomMobile} !important; } }`}
+    {`@media (max-width: 430px) { .info-content.${pageClass} { --page-content-padding: ${contentPaddingBottomMobile} !important; } }`}
   </style>
 ) : null}
