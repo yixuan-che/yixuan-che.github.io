@@ -29,6 +29,11 @@
 
 /* 保持页面在小屏时无横向滚动 */
 html, body {
-    overflow: hidden; /* 禁止纵向和横向滚动，使页面始终不可滑动 */
+        overflow-x: hidden;
+}
+
+/* 用于需要锁定滚动的页面（只在个别页面启用） */
+.lock-scroll, .lock-scroll body {
+    overflow: hidden;
 }
 

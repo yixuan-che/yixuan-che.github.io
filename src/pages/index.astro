@@ -8,9 +8,9 @@ import AvailableForWork from "../components/available.astro";
 ---
 
 <RootLayout>
-	<main class="min-h-screen overflow-auto">
-		<div class="group relative w-full h-screen flex items-center justify-center">
-			<div class="absolute w-full h-screen -z-10">
+ 	<main class="overflow-hidden" style="height: calc(var(--vh, 1vh) * 100);">
+ 		<div class="group relative w-full flex items-center justify-center" style="height: calc(var(--vh, 1vh) * 100);">
+ 			<div class="absolute w-full -z-10" style="height: calc(var(--vh, 1vh) * 100);">
 				<WarpBackground
 					color1="#09090b" 
 					color2="#27272a"
@@ -24,7 +24,7 @@ import AvailableForWork from "../components/available.astro";
 				/>
 			</div>
 
-			<div class="p-5 sm:p-10 absolute w-full h-screen flex flex-col justify-between z-10">
+			<div class="p-5 sm:p-10 absolute w-full flex flex-col justify-between z-10" style="height: calc(var(--vh, 1vh) * 100);">
 				<div>
 					<H1 size="large"> Yixuan <br class="sm:hidden" /> Che </H1>
 				</div>
@@ -51,11 +51,30 @@ import AvailableForWork from "../components/available.astro";
 			</div>
 		</div>
 	</main>
-</RootLayout>
+	<script>
+		(() => {
+			if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
-<style>
-  /* 禁用页面的垂直滚动条 */
-  html, body {
-    overflow: hidden;
-  }
-</style>
+			// set --vh for mobile browsers so 100% fills the visible viewport
+			const setVh = () => {
+				document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+			};
+			setVh();
+			window.addEventListener('resize', setVh);
+			window.addEventListener('orientationchange', setVh);
+
+			// Disable page scrolling for this page only
+			const docEl = document.documentElement;
+			const body = document.body;
+			const prevDocOverflow = docEl.style.overflow;
+			const prevBodyOverflow = body.style.overflow;
+			docEl.style.overflow = 'hidden';
+			body.style.overflow = 'hidden';
+			// restore when navigating away / unload
+			window.addEventListener('beforeunload', () => {
+				docEl.style.overflow = prevDocOverflow || '';
+				body.style.overflow = prevBodyOverflow || '';
+			}, { once: true });
+		})();
+	</script>
+</RootLayout>

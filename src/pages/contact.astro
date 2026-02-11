@@ -4,11 +4,11 @@ import InfoLayout from "../layouts/InfoLayout.astro";
 import ExternalLink from "../components/external-link.astro";
 ---
 
-<InfoLayout>
+<InfoLayout lockScroll={true}>
      <!-- 使用 CSS Grid 自适应高度 -->
-     <div class="p-4 sm:pt-8 sm:px-12 pb-8 mt-0.5 flex flex-col justify-between grid grid-rows-[auto_1fr_auto] min-h-screen">
+     <div class="p-4 sm:pt-8 sm:px-12 pb-8 flex flex-col justify-between grid grid-rows-[auto_1fr_auto] min-h-screen">
           <!-- 标题行 -->
-          <div class="contact-title pb-25 mt-0.5">
+          <div class="contact-title pb-15 mt-0.5">
                <H1>Contact</H1>
           </div>
           
@@ -20,7 +20,7 @@ import ExternalLink from "../components/external-link.astro";
                     University of Science and Technology of China
                     </p>
 
-                    <div class="mt-6 sm:mt-6 flex flex-col gap-1">
+                    <div class="mt-4 sm:mt-6 flex flex-col gap-1">
                          <a href="mailto:yxche@mail.ustc.edu.cn" class="w-fit group flex items-center gap-1 text-base lg:text-xl text-zinc-400 hover:text-zinc-50">
                               yxche@mail.ustc.edu.cn
                               <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45 group-hover:rotate-0 transition-all duration-300 ease-in-out" width="24" height="24" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@ import ExternalLink from "../components/external-link.astro";
                               </svg>
                          </a>
 
-                         <a href="mailto:yxche@outlook.com" class="mb-6 w-fit group flex items-center gap-1 text-base lg:text-xl text-zinc-400 hover:text-zinc-50">
+                         <a href="mailto:yxche@outlook.com" class="mb-4 sm:mb-6 w-fit group flex items-center gap-1 text-base lg:text-xl text-zinc-400 hover:text-zinc-50">
                               yxche@outlook.com
                               <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45 group-hover:rotate-0 transition-all duration-300 ease-in-out" width="24" height="24" viewBox="0 0 24 24">
                                    <title>Arrow Icon</title>

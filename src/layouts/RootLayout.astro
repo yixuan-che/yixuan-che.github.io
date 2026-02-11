@@ -3,7 +3,7 @@ import "../styles/global.css";
 import { ClientRouter } from 'astro:transitions';
 import LoadingIndicator from "astro-loading-indicator/component"
 
-const { title, description } = Astro.props;
+const { title, description, lockScroll = false } = Astro.props;
 
 const defaultTitle = "Yixuan Che";
 const defaultDescription = "Ph.D. Candidate, USTC";
@@ -36,7 +36,7 @@ const isNoScrollPage = true; // 默认锁定所有页面
 		
 	</head>
 	
-	<body class={`font-sans min-h-screen bg-zinc-900 overflow-x-hidden`}>
+	<body class={`font-sans min-h-screen bg-zinc-900 overflow-x-hidden ${lockScroll ? 'lock-scroll' : ''}`}>
 		<slot />
 	</body>
 
