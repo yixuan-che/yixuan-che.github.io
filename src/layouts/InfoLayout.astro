@@ -3,9 +3,11 @@ import RootLayout from "./RootLayout.astro";
 import Footer from "../components/footer.astro";
 import WarpBackground from "../components/warp-background";
 
-const { title, description, lockScroll = false, contentPaddingBottom = '7rem' } = Astro.props;
+const { title, description, lockScroll = false, contentPaddingBottom = '7rem', contentPaddingBottomMobile = null } = Astro.props;
 
 const pathname = Astro.url.pathname;
+// generate a safe class name for page-specific styling
+const pageClass = `page-${pathname.replace(/[^a-zA-Z0-9_-]/g, '').replace(/^\//, '') || 'root'}`;
 ---
 
 <RootLayout title={title} description={description} lockScroll={lockScroll}>
@@ -30,7 +32,7 @@ const pathname = Astro.url.pathname;
       </nav>
 
       <main class="relative flex-1">
-        <div class="mx-auto w-full max-w-8xl" style={`padding-bottom: ${contentPaddingBottom}`}>
+        <div class={`mx-auto w-full max-w-8xl info-content ${pageClass}`} style={`padding-bottom: ${contentPaddingBottom}`}>
           <slot />
         </div>
       </main>
@@ -42,3 +44,9 @@ const pathname = Astro.url.pathname;
 
   </div>
 </RootLayout>
+
+{contentPaddingBottomMobile ? (
+  <style>
+    {`@media (max-width: 430px) { .info-content.${pageClass} { padding-bottom: ${contentPaddingBottomMobile} !important; } }`}
+  </style>
+) : null}
