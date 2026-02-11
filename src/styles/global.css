@@ -29,6 +29,6 @@
 
 /* 保持页面在小屏时无横向滚动 */
 html, body {
-    overflow-x: hidden;
+    overflow: hidden; /* 禁止纵向和横向滚动，使页面始终不可滑动 */
 }
 
