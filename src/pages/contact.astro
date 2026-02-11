@@ -5,10 +5,10 @@ import ExternalLink from "../components/external-link.astro";
 ---
 
 <InfoLayout lockScroll={true}>
-     <!-- 使用 CSS Grid 自适应高度 -->
-     <div class="p-4 sm:pt-8 sm:px-12 pb-8 flex flex-col justify-between grid grid-rows-[auto_1fr_auto] min-h-screen">
+     <!-- 使用 CSS Grid 自适应高度（移动端使用 --vh 保证与可视窗口一致） -->
+     <div class="p-4 sm:pt-8 sm:px-12 pb-8 flex flex-col grid grid-rows-[auto_1fr_auto]" style="height: calc(var(--vh, 1vh) * 100);">
           <!-- 标题行 -->
-          <div class="contact-title pb-15 mt-0.5">
+          <div class="contact-title pb-4 mt-0.5">
                <H1>Contact</H1>
           </div>
           
@@ -47,7 +47,7 @@ import ExternalLink from "../components/external-link.astro";
                </div>
 
                <!-- 地址信息在下方 -->
-               <div class="contact-address mb-15 lg:mb-10">
+               <div class="contact-address mb-6 lg:mb-10">
                     <p class="text-base text-zinc-500">B-1402, Materials Teaching and Research Building</p>
                     <p class="text-base text-zinc-500">96 Jinzhai Rd.</p>
                     <p class="text-base text-zinc-500">Hefei, Anhui 230026</p>
@@ -57,9 +57,30 @@ import ExternalLink from "../components/external-link.astro";
      </div>
 </InfoLayout>
 
-<style>
-  /* 禁用页面的垂直滚动条 */
-  html, body {
-    overflow: hidden;
-  }
-</style>
+<script>
+     (() => {
+          if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+          // set --vh for mobile browsers so 100% fills the visible viewport
+          const setVh = () => {
+               document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+          };
+          setVh();
+          window.addEventListener('resize', setVh);
+          window.addEventListener('orientationchange', setVh);
+
+          // lock scrolling for this page only
+          const docEl = document.documentElement;
+          const body = document.body;
+          const prevDocOverflow = docEl.style.overflow;
+          const prevBodyOverflow = body.style.overflow;
+          docEl.style.overflow = 'hidden';
+          body.style.overflow = 'hidden';
+
+          // restore on unload/navigation away
+          window.addEventListener('beforeunload', () => {
+               docEl.style.overflow = prevDocOverflow || '';
+               body.style.overflow = prevBodyOverflow || '';
+          }, { once: true });
+     })();
+</script>
