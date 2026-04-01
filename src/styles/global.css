@@ -6,13 +6,25 @@
                BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+@font-face {
+    font-family: "Canela Deck Web";
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        local("Canela Deck Bold Italic"),
+        local("CanelaDeck-BoldItalic"),
+        url("/fonts/CanelaDeck-BoldItalic.woff2") format("woff2"),
+        url("/fonts/CanelaDeck-BoldItalic.woff") format("woff");
+}
+
 /* Footer height variable (used to keep page content above the fixed footer) */
 :root {
     --footer-height: 6.5rem;
 }
 
 .canela-deck-heading {
-    font-family: "Canela Deck", "Canela", "Times New Roman", serif;
+    font-family: "Canela Deck Web", "Canela Deck", "Canela", "Times New Roman", serif;
     font-style: italic;
     font-weight: 700;
 }
