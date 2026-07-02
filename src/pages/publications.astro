@@ -9,6 +9,15 @@ import InfoLayout from "../layouts/InfoLayout.astro";
 const publications = [
   { 
      year: 2026, 
+     title: "Geometry-Driven Magnetoelectric Coupling in Two-Dimensional Compensated Ferrimagnets",
+     authors: "P. Xu<sup>†</sup>, <b>Y. Che</b><sup>†</sup>, H. Lv<sup>*</sup>, X. Wu<sup>*</sup>, and J. Yang", 
+     journal: "arXiv Preprint", 
+     volume: "arXiv:2607.00997",
+     pages: "v1",
+     doi: "10.48550/arXiv.2607.00997" 
+  },
+  { 
+     year: 2026, 
      title: "Orbital-Engineered Altermagnetism in Two-Dimensional Square Lattices",
      authors: "<b>Y. Che</b><sup>†</sup>, P. Xu<sup>†</sup>, H. Lv<sup>*</sup>, X. Wu<sup>*</sup>, and J. Yang", 
      journal: "arXiv Preprint", 
@@ -126,9 +135,9 @@ const years = [...new Set(publications.map(p => p.year))].sort((a, b) => b - a);
 ========================= */
 const googleScholarData = {
   totalPublications: total, // 自动从publications计算
-  totalCitations: 248,      // 请手动更新：你的总引用数
+  totalCitations: 252,      // 请手动更新：你的总引用数
   hIndex: 8,               // 请手动更新：你的H指数
-  lastUpdated: "June 28, 2026", // 请更新：最后更新时间
+  lastUpdated: "Jul. 1, 2026", // 请更新：最后更新时间
   profileUrl: "https://scholar.google.com/citations?hl=zh-CN&user=P_GoPMoAAAAJ"
 };
 ---
