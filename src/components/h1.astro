@@ -4,7 +4,7 @@ import clsx from "clsx/lite";
 type Props = {
     className?: string;
     size?: "default" | "large";
-    fontStyle?: "canela" | "inter";
+    fontStyle?: "canela" | "google-sans";
 }
 
 const { size = "default", className, fontStyle = "canela" } = Astro.props;
@@ -14,7 +14,7 @@ const { size = "default", className, fontStyle = "canela" } = Astro.props;
     class={clsx(
         "text-white text-balance",
         fontStyle === "canela" && "canela-deck-heading",
-        fontStyle === "inter" && "font-sans font-bold not-italic",
+        fontStyle === "google-sans" && "font-sans font-bold not-italic tracking-[-0.035em]",
         size === "default" && "text-6xl md:text-8xl tracking-tight",
         size === "large" && "text-8xl md:text-[120px] lg:text-[160px] tracking-tighter",
         className,
