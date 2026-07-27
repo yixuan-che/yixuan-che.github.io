@@ -36,21 +36,21 @@ const publications = [
   },
   { 
      year: 2026, 
-     title: "Orbital-Engineered Altermagnetism in Two-Dimensional Square Lattices",
-     authors: "<b>Y. Che</b><sup>†</sup>, P. Xu<sup>†</sup>, H. Lv<sup>*</sup>, X. Wu<sup>*</sup>, and J. Yang", 
-     journal: "arXiv Preprint", 
-     volume: "arXiv:2605.25128",
-     pages: "v1",
-     doi: "10.48550/arXiv.2605.25128" 
-  },
-  { 
-     year: 2026, 
      title: "Precision Chemical Design for Reticular Spintronics",
      authors: "<b>Y. Che</b>, H. Lv<sup>*</sup>, and X. Wu<sup>*</sup>", 
      journal: "Precis. Chem.", 
      volume: "4",
      pages: "DOI: 10.1021/prechem.6c00044",
      doi: "10.1021/prechem.6c00044" 
+  },
+  { 
+     year: 2026, 
+     title: "Orbital-Engineered Altermagnetism in Two-Dimensional Square Lattices",
+     authors: "<b>Y. Che</b><sup>†</sup>, P. Xu<sup>†</sup>, H. Lv<sup>*</sup>, X. Wu<sup>*</sup>, and J. Yang", 
+     journal: "arXiv Preprint", 
+     volume: "arXiv:2605.25128",
+     pages: "v1",
+     doi: "10.48550/arXiv.2605.25128" 
   },
   { 
      year: 2026, 
@@ -153,9 +153,9 @@ const years = [...new Set(publications.map(p => p.year))].sort((a, b) => b - a);
 ========================= */
 const googleScholarData = {
   totalPublications: total, // 自动从publications计算
-  totalCitations: 276,      // 请手动更新：你的总引用数
+  totalCitations: 279,      // 请手动更新：你的总引用数
   hIndex: 8,               // 请手动更新：你的H指数
-  lastUpdated: "Jul. 22, 2026", // 请更新：最后更新时间
+  lastUpdated: "Jul. 27, 2026", // 请更新：最后更新时间
   profileUrl: "https://scholar.google.com/citations?hl=zh-CN&user=P_GoPMoAAAAJ"
 };
 ---
