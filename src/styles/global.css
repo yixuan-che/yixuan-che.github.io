@@ -65,6 +65,12 @@ b {
     --footer-height: 6.5rem;
 }
 
+@media (max-width: 639px) {
+    :root {
+        --footer-height: 7.5rem;
+    }
+}
+
 /* Ensure contact pages leave space for the fixed footer (and safe-area for mobile) */
 .contact-page {
     padding-bottom: calc(var(--footer-height) + env(safe-area-inset-bottom));

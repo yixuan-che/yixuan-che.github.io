@@ -7,10 +7,10 @@ const { pathname } = Astro.props;
 
 <footer
   class="
-    fixed bottom-0 left-0 right-4 lg:right-4
+    fixed bottom-0 left-0 right-0
     flex flex-col lg:flex-row
     items-center lg:items-start
-    gap-2 lg:gap-8 py-4 lg:py-6
+    gap-2 lg:gap-8 py-4 pb-[calc(1rem+env(safe-area-inset-bottom))] lg:py-6
     px-4 lg:px-8
     bg-zinc-900
     z-20
@@ -52,7 +52,7 @@ const { pathname } = Astro.props;
 
   <!-- 移动端：导航 + Copyright -->
   <div class="lg:hidden flex flex-col items-center gap-4 w-full">
-    <div class="flex items-center gap-4 mt-1">
+    <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-1">
       <ExternalLink href="/" openNewTab={false} pathname={pathname}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const { pathname } = Astro.props;
         <span>Contact</span>
       </ExternalLink>
     </div>
-    <div class="text-zinc-500 text-center text-base tracking-[0.008em] -mt-1">
+    <div class="max-w-full text-zinc-500 text-center text-sm sm:text-base tracking-normal sm:tracking-[0.008em] -mt-1">
       © {new Date().getFullYear()} Yixuan Che. All rights reserved.
     </div>
   </div>

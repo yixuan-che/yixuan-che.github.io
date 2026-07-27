@@ -3,7 +3,7 @@ import RootLayout from "./RootLayout.astro";
 import Footer from "../components/footer.astro";
 import WarpBackground from "../components/warp-background";
 
-const { title, description, lockScroll = false, contentPaddingBottom = '7rem', contentPaddingBottomMobile = null } = Astro.props;
+const { title, description, lockScroll = false, contentPaddingBottom = 'calc(var(--footer-height) + 1rem)', contentPaddingBottomMobile = null } = Astro.props;
 
 const pathname = Astro.url.pathname;
 const pageClass = `page-${pathname.replace(/[^a-zA-Z0-9_-]/g, '').replace(/^\//, '') || 'root'}`;
@@ -13,9 +13,9 @@ const pageClass = `page-${pathname.replace(/[^a-zA-Z0-9_-]/g, '').replace(/^\//,
   <div class="min-h-screen flex flex-col">
 
     <!-- 主体区域：侧栏 + 内容 -->
-    <div class="flex flex-1 relative gap-6 sm:gap-7 w-full">
+    <div class="flex flex-1 relative gap-0 sm:gap-7 w-full min-w-0">
 
-      <nav class="relative">
+      <nav class="relative w-5 shrink-0 sm:w-0">
         <div class="h-screen w-5 sm:w-10 fixed z-50 overflow-auto left-0 top-0">
           <WarpBackground
             color1="#ffffff" 
@@ -30,7 +30,7 @@ const pageClass = `page-${pathname.replace(/[^a-zA-Z0-9_-]/g, '').replace(/^\//,
         </div>
       </nav>
 
-      <main class="relative flex-1">
+      <main class="relative min-w-0 flex-1">
         <div class={`mx-auto w-full max-w-8xl info-content ${pageClass}`} style={`padding-bottom: var(--page-content-padding, ${contentPaddingBottom})`}>
           <slot />
         </div>
