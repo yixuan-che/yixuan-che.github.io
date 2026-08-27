@@ -10,6 +10,12 @@ permissions:
   pages: write
   id-token: write
 
+# Only the newest push may deploy Pages. This prevents a previous deployment
+# from blocking all later pushes.
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -51,4 +57,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
