@@ -62,12 +62,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          curl --fail --silent --show-error --request POST \
+          curl --fail-with-body --show-error --request POST \
             --header "Accept: application/vnd.github+json" \
             --header "Authorization: Bearer $GH_TOKEN" \
+            --header "Content-Type: application/json" \
             "https://api.github.com/repos/${{ github.repository }}/deployments/6127995467/statuses" \
-            --data state=inactive \
-            --data environment=github-pages
+            --data '{"state":"inactive","environment":"github-pages"}'
 
       - name: Deploy to GitHub Pages
         id: deployment
