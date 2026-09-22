@@ -9,10 +9,19 @@ import InfoLayout from "../layouts/InfoLayout.astro";
 const publications = [
     { 
      year: 2026, 
+     title: "Reversible On/Off Switching of Altermagnetism in Two-Dimensional Metal-Organic Frameworks via Molecular Tautomerism",
+     authors: "H. Wang<sup>†</sup>, <b>Y. Che</b><sup>†</sup>, Y. Wang, X. Li<sup>*</sup>, and X. Wu<sup>*</sup>", 
+     journal: "Inorg. Chem. Front.", 
+     volume: 13,
+     pages: "Accepted",
+     doi: "10.1360/CSB-2026-0774" 
+    },
+    { 
+     year: 2026, 
      title: "Symmetry and Chemical Design of Altermagnets",
      authors: "<b>Y. Che</b>, H. Lv<sup>*</sup>, and X. Wu<sup>*</sup>", 
      journal: "Chin. Sci. Bull.", 
-     volume: "Advance Online Publication",
+     volume: 71,
      pages: "DOI: 10.1360/CSB-2026-0774",
      doi: "10.1360/CSB-2026-0774" 
     },
@@ -21,7 +30,7 @@ const publications = [
      title: "Noninnocent Ligands as a Design Strategy for Fully Compensated Ferrimagnetism in Two-Dimensional Metal-Organic Frameworks",
      authors: "Y. Li<sup>†</sup>, <b>Y. Che</b><sup>†</sup>, H. Lv<sup>*</sup>, X. Wu<sup>*</sup>, and J. Yang", 
      journal: "J. Am. Chem. Soc.", 
-     volume: "148",
+     volume: 148,
      pages: "32033-32040",
      doi: "10.1021/jacs.6c06650" 
   },
@@ -30,7 +39,7 @@ const publications = [
      title: "Engineering Altermagnetic Transitions in Two-Dimensional Metal-Organic Frameworks via Chemical Symmetry Breaking",
      authors: "P. Xu<sup>†</sup>, <b>Y. Che</b><sup>†</sup>, H. Lv<sup>*</sup>, X. Wu<sup>*</sup>, and J. Yang", 
      journal: "J. Am. Chem. Soc.", 
-     volume: "148",
+     volume: 148,
      pages: "30675-30681",
      doi: "10.1021/jacs.5c22635" 
   },
@@ -48,7 +57,7 @@ const publications = [
      title: "Precision Chemical Design for Reticular Spintronics",
      authors: "<b>Y. Che</b>, H. Lv<sup>*</sup>, and X. Wu<sup>*</sup>", 
      journal: "Precis. Chem.", 
-     volume: "4",
+     volume: 4,
      pages: "DOI: 10.1021/prechem.6c00044",
      doi: "10.1021/prechem.6c00044" 
   },
@@ -66,7 +75,7 @@ const publications = [
      title: "Fluoroacetate-Mediated Dual-Interface Ionic Stabilization in Perovskite Solar Cells",
      authors: "H. Guo<sup>†</sup>, F. Cai<sup>†</sup>, L. Tang, <b>Y. Che</b>, H. Meng, M. Li, S. Yuan, K. Mao, Z. Zhu, F. Liu, W. Chen, Y. Wang, C. Xiao, H. Lv, X. Wu, and J. Xu<sup>*</sup>", 
      journal: "Adv. Mater.", 
-     volume: "38",
+     volume: 38,
      pages: "e73221",
      doi: "10.1002/adma.73221" 
   },
@@ -162,9 +171,9 @@ const years = [...new Set(publications.map(p => p.year))].sort((a, b) => b - a);
 ========================= */
 const googleScholarData = {
   totalPublications: total, // 自动从publications计算
-  totalCitations: 324,      // 请手动更新：你的总引用数
+  totalCitations: 325,      // 请手动更新：你的总引用数
   hIndex: 8,               // 请手动更新：你的H指数
-  lastUpdated: "Sept 18, 2026", // 请更新：最后更新时间
+  lastUpdated: "Sept 22, 2026", // 请更新：最后更新时间
   profileUrl: "https://scholar.google.com/citations?hl=zh-CN&user=P_GoPMoAAAAJ"
 };
 ---
