@@ -7,14 +7,14 @@ type Props = {
     fontStyle?: "canela" | "google-sans";
 }
 
-const { size = "default", className, fontStyle = "canela" } = Astro.props;
+const { size = "default", className, fontStyle = "google-sans" } = Astro.props;
 ---
 
 <h1
     class={clsx(
         "text-white text-balance",
         fontStyle === "canela" && "canela-deck-heading",
-        fontStyle === "google-sans" && "font-sans font-bold not-italic tracking-[-0.035em]",
+        fontStyle === "google-sans" && "font-sans font-bold not-italic page-title",
         size === "default" && "text-6xl md:text-8xl tracking-tight",
         size === "large" && "text-8xl md:text-[120px] lg:text-[160px] tracking-tighter",
         className,

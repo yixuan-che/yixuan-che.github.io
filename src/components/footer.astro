@@ -12,10 +12,10 @@ const { pathname } = Astro.props;
     items-center lg:items-start
     gap-2 lg:gap-8 py-4 pb-[calc(1rem+env(safe-area-inset-bottom))] lg:py-6
     px-4 lg:px-8
-    bg-zinc-900
     z-20
   "
 >
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-zinc-900 [clip-path:inset(0_16px_0_0)] lg:[clip-path:inset(0_17px_0_0)]"></div>
   <!-- 左侧：导航 -->
   <div class="hidden lg:flex items-center gap-8 sm:px-6 md:px-10">
     <div class="flex gap-1 lg:gap-8">
@@ -93,7 +93,7 @@ const { pathname } = Astro.props;
     hidden lg:block text-zinc-500 text-base tracking-[0.008em]
     w-auto 
     text-right
-    lg:ml-auto 
+    lg:ml-auto lg:mr-6
   "
   >
     © {new Date().getFullYear()} Yixuan Che. All rights reserved.
