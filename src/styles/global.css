@@ -26,22 +26,32 @@ body {
 
 .section-heading {
     font-variation-settings: "wdth" 100;
-    transform: scaleX(1.2);
+    transform: scaleX(1.15);
     transform-origin: left center;
     letter-spacing: -0.02em;
-    width: calc(100% / 1.2);
-    max-width: calc(100% / 1.2);
+    width: calc(100% / 1.15);
+    max-width: calc(100% / 1.15);
     overflow-wrap: anywhere;
 }
 
 .page-title,
 .hero-name,
+.hero-affiliation,
 .publication-year,
 .display-number {
     font-variation-settings: "wdth" 100;
-    transform: scaleX(1.2);
+    transform: scaleX(1.15);
     transform-origin: left center;
     letter-spacing: -0.02em;
+}
+
+.hero-affiliation {
+    display: block;
+    width: calc(100% / 1.15);
+}
+
+.hero-affiliation-first {
+    white-space: nowrap;
 }
 
 .display-number {
