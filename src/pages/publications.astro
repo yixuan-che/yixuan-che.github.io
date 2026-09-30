@@ -260,24 +260,25 @@ const googleScholarData = {
       const items = publications.filter(p => p.year === year);
       return (
         <div id={String(year)} class="mb-2 pt-18 md:pt-20 -mt-10">
-          <h2 class="publication-year text-3xl font-bold text-zinc-100 mb-5 border-b border-zinc-100/20 pb-3">
+          <h2 class="publication-year text-3xl font-bold text-zinc-100 pb-3">
             {year}
           </h2>
+          <div aria-hidden="true" class="w-full border-b border-zinc-100/20 mb-5"></div>
 
-          <ul class="space-y-4">
+          <ul class="space-y-3">
             {items.map(p => {
               const number = total - publications.findIndex(x => x === p);
               return (
-                <li class="flex gap-5 items-start">
+                <li class="flex gap-3 sm:gap-5 items-start">
                   <!-- 圆圈编号/链接 -->
                   <a 
                     href={`https://doi.org/${p.doi}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     title="View Article"
-                    class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-700 hover:bg-red-200/60
+                    class="-mt-0.5 sm:-mt-1 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-700 hover:bg-red-200/60
                            flex items-center justify-center
-                           text-base sm:text-lg font-semibold text-zinc-100 hover:text-white-100
+                           text-[17px] sm:text-[19px] font-semibold text-zinc-100 hover:text-white-100
                            shrink-0 transition-all duration-300 group relative"
                   >
                     <span class="group-hover:opacity-0 transition-opacity duration-300">
@@ -295,11 +296,11 @@ const googleScholarData = {
 
                   <!-- 内容 -->
                   <div class="flex-1">
-                    <div class="mt-0.5 sm:mt-1 flex">
-                      <p class="text-zinc-100 text-xl sm:text-2xl font-semibold leading-snug" set:html={p.title}></p>
+                    <div class="flex">
+                      <p class="publication-entry-title text-zinc-100 text-xl sm:text-2xl font-semibold" set:html={p.title}></p>
                     </div>
-                    <p class="text-base sm:text-lg text-zinc-400 mt-1" set:html={p.authors}></p>
-                    <p class="text-base sm:text-lg text-zinc-400 mt-1">
+                    <p class="mt-0.5 text-base sm:text-lg text-zinc-400" set:html={p.authors}></p>
+                    <p class="text-base sm:text-lg text-zinc-400">
                       <i>{p.journal}</i>&nbsp;<b>{p.year}</b>, {p.volume}, {p.pages}
                     </p>
                   </div>

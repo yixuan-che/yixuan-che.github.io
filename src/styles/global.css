@@ -48,6 +48,17 @@ body {
     transform-origin: center center;
 }
 
+.conference-presentations .grid > div:first-child,
+.publication-entry-title,
+.bio-entry-title,
+.research-highlight-title {
+    line-height: 1.35;
+}
+
+.bio-entry-details {
+    margin-top: 0.125rem;
+}
+
 @media (max-width: 639px) {
     .page-title,
     .hero-name {
